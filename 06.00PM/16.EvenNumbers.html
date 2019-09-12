@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+*{
+ font-family:'comic sans ms';
+ font-size:24px;
+ text-shadow:0px 0px 10px black;    
+}    
+body{
+ margin-left:20px;        
+}    
+</style>    
+</head>
+<body>
+<p> Even Numbers between 
+<input type=text id=txtNum1 autofocus size=5> &amp; 
+<input type=text id=txtNum2 size=5> are 
+<button onclick="displayEvens()"> Find </button>    
+</p> 
+    
+<p id='evens'></p>    
+    
+<script>
+function displayEvens() 
+{
+  
+ //get text field values
+ let n1 = document.getElementById('txtNum1').value
+ 
+ let n2 = document.getElementById('txtNum2').value
+ 
+ let result = document.getElementById('evens')
+ 
+ //take out the leading and ending spaces
+ n1=n1.trim()
+ n2=n2.trim()    
+    
+ //clear the result region
+ result.innerHTML=''
+    
+ if(n1.length<=0){
+   result.innerHTML = 'enter first number'
+document.getElementById('txtNum1').focus(); 
+   result.style.color='red'
+ }
+ else if(n2.length<=0){
+  result.innerHTML = 'enter second number'   
+  document.getElementById('txtNum2').focus()    
+  result.style.color='red'
+ }    
+ else{
+   //convert to number
+   n1 = parseInt(n1)
+   n2 = parseInt(n2) 
+   
+   //to check both are numbers or not
+   if(isNaN(n1) || isNaN(n2)){
+    result.innerHTML='enter numbers'
+    return;   
+   }     
+   if(n1%2==0)
+       n1=n1+2
+   else
+       n1=n1+1
+     
+   let res=''
+   while(n1<n2){
+    res=res+n1+" | "
+    n1= n1+2      
+   }
+   result.innerHTML = res
+  result.style.color='black'
+ }    
+}
+</script>    
+</body>    
+</html>
+

@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+*{
+ font-family:'comic sans ms';
+ font-size:24px;
+ text-shadow:0px 0px 10px black;    
+}    
+body{
+ margin-left:20px;        
+}    
+</style>    
+</head>
+<body>
+<p> Multiplication Table of 
+<input type=text id=txtNum1 autofocus size=5 onblur="mTable(this.value)">    
+</p> 
+<p id='mt'></p>    
+    
+<script>
+function mTable(n) 
+{
+if(n.length>0){    
+ let table=''
+ for(let i=1;i<=10;i++)
+ {
+  let p = n*i
+  table = table+n+' x '+i+' = '+p+'<br>'
+ }//for
+    
+document.getElementById('mt').innerHTML = table    
+} //if
+else
+ alert('Please enter a number') 
+}
+</script>    
+</body>    
+</html>
+
