@@ -1,0 +1,58 @@
+<html>
+<head>
+<style>
+*{
+ font-family:verdana;
+ font-size:22px;    
+}    
+button
+{
+ border:1px solid black;
+ padding:7px 35px;
+ background:transparent;
+ text-align:center;
+ border-radius:50px;    
+}
+button:hover
+{
+ background:linear-gradient(35deg,black,red,black);
+ color:white    
+}
+</style> 
+    
+<script>
+function fun1()
+{
+ alert('Welcome to Message Dialog')    
+}
+function fun2()
+{
+ let response = confirm('Do you want to close the application?')
+ 
+ let ele = document.querySelector('#region')
+ 
+ ele.innerHTML = 'Application Close: '+ response       
+}
+    
+function fun3()
+{
+ let name = prompt('enter name','Naresh') 
+ 
+ let ele = document.querySelector('#region')
+ 
+ if(name == null)
+  ele.innerHTML = 'enter the name'     
+ else
+  ele.innerHTML = 'Name : ' + name     
+}
+</script>    
+</head>
+    
+<body>
+<button onclick="fun1()"> Message</button>    
+<button onclick="fun2()"> Close</button>        
+<button onclick="fun3()"> Entry</button>  
+
+<p id="region" style="margin-top:50px"></p>    
+</body>    
+</html>    
