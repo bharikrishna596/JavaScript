@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+*{
+ font-family:'comic sans ms';
+ font-size:24px;
+ text-shadow:0px 0px 10px black;    
+}    
+body{
+ margin-left:20px;        
+}    
+</style>    
+</head>
+<body>
+<p> 
+<input type=button value="* Pattern" onclick="displayPattern(this.value)">  
+</p> 
+    
+<p id='pattern'></p>    
+    
+<script>
+function displayPattern(label) 
+{ 
+ let result = document.getElementById('pattern')
+ let res=''
+ for(let i=1;i<=10;i++){
+  for(let j=1;j<=i;j++){
+    res=res+'* '  
+  }
+  res=res+'<br>'     
+ }
+ result.innerHTML=res    
+}
+</script>    
+</body>    
+</html>
+
